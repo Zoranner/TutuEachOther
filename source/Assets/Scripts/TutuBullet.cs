@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TutuBullet : MonoBehaviour
 {
-    private Transform _Target;
+    private Vector3 _TargetPosition;
 
     public float MoveVelocity = 1;
     public Vector3 ScaleVelocity = Vector3.one;
@@ -13,26 +13,27 @@ public class TutuBullet : MonoBehaviour
 
     public void SetTarget(Transform target)
     {
-        _Target = target;
+        _TargetPosition = target.position;
+        transform.LookAt(target);
     }
 
     private void Update()
     {
-        if (!_Target)
+        if (!gameObject.activeSelf)
         {
             return;
         }
 
-        var distance = Vector3.Distance(transform.position, _Target.position);
+        var distance = Vector3.Distance(transform.position, _TargetPosition);
         if (distance < AttackRange)
         {
             AttackSucceededEvent?.Dispatch(this);
             return;
         }
 
-        var progress = MoveVelocity * Time.deltaTime / distance;
-        transform.position = Vector3.Lerp(transform.position, _Target.position, progress);
-        transform.LookAt(_Target);
+        transform.position = Vector3.MoveTowards(
+            transform.position, _TargetPosition, 
+            MoveVelocity * Time.deltaTime);
         transform.localScale = new Vector3(
             transform.localScale.x + ScaleVelocity.x,
             transform.localScale.y + ScaleVelocity.y,
