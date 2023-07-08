@@ -15,6 +15,14 @@ PrefabInstance:
       propertyPath: Velocity
       value: 5.24
       objectReference: {fileID: 0}
+    - target: {fileID: 4462740812994950946, guid: a0b4d2dfc49ec14448adb63e31176fe6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0fd9dd7d27fe2db4680f657216bec161, type: 2}
+    - target: {fileID: 5422427863060840691, guid: a0b4d2dfc49ec14448adb63e31176fe6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0fd9dd7d27fe2db4680f657216bec161, type: 2}
     - target: {fileID: 7929025118630239968, guid: a0b4d2dfc49ec14448adb63e31176fe6, type: 3}
       propertyPath: m_RootOrder
       value: 0
