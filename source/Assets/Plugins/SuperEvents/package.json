@@ -1,0 +1,13 @@
+{
+    "name": "com.kimotech.superevent",
+    "displayName": "Super Event",
+    "description": "This is a SuperEvent plugin for Unity.",
+    "version": "1.0.0",
+    "unity": "2019.4",
+    "author": {
+        "name": "KimoTech",
+        "email": "rd@kimo-tech.com"
+    },
+    "license": "MIT",
+    "dependencies": {}
+}

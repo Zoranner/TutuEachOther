@@ -1,0 +1,13 @@
+{
+    "name": "com.kimotech.supercoroutine",
+    "displayName": "Super Coroutine",
+    "description": "This is a super coroutine package for unity.",
+    "version": "1.0.1",
+    "unity": "2019.4",
+    "author": {
+        "name": "KimoTech",
+        "email": "rd@kimo-tech.com"
+    },
+    "license": "MIT",
+    "dependencies": {}
+}
