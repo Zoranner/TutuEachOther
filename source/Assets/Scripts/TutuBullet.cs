@@ -32,6 +32,7 @@ public class TutuBullet : MonoBehaviour
 
         var progress = MoveVelocity * Time.deltaTime / distance;
         transform.position = Vector3.Lerp(transform.position, _Target.position, progress);
+        transform.LookAt(_Target);
         transform.localScale = new Vector3(
             transform.localScale.x + ScaleVelocity.x,
             transform.localScale.y + ScaleVelocity.y,
