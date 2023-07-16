@@ -1,7 +1,7 @@
 using KimoTech.SuperCoroutines;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Pool;
 
 public class TutuExecutor : MonoBehaviour
@@ -10,8 +10,14 @@ public class TutuExecutor : MonoBehaviour
 
     public Transform Executor;
     public TutuBullet Bullet;
-    public float TutuInterval = 300;
+
+    private bool _Trigger = false;
+    public float Delay = 5;
+    public float Interval = 1;
+    public float Duration = 10;
     public TutuExecutor[] Targets;
+
+    public UnityEvent Executed;
 
     private TutuScene _Scene;
     public TutuScene Scene
@@ -30,15 +36,21 @@ public class TutuExecutor : MonoBehaviour
     private void Awake()
     {
         _BulletPool = new ObjectPool<TutuBullet>(
-            PoolObjectCreated, 
-            PoolObjectGeted, 
-            PoolObjectReleased, 
+            PoolObjectCreated,
+            PoolObjectGeted,
+            PoolObjectReleased,
             PoolObjectDestroyed, true, 50, 1000);
     }
 
     private void Start()
     {
         TimeTunnel.RunCoroutineSingleton(TutuEachOtherCoroutine(), Segment.Update, gameObject, "TutuEachOtherCoroutine", SingletonBehavior.Abort);
+    }
+
+    public void Gogogo()
+    {
+        Debug.Log($"{name}");
+        _Trigger = true;
     }
 
     private TutuBullet PoolObjectCreated()
@@ -67,17 +79,37 @@ public class TutuExecutor : MonoBehaviour
 
     private IEnumerator<float> TutuEachOtherCoroutine()
     {
-        while (this)
+        if (Delay < 0)
         {
-            foreach(var target in Targets)
+            while (!_Trigger)
             {
+                yield return TimeTunnel.WaitForOneFrame;
+            }
+        }
+        else
+        {
+            yield return TimeTunnel.WaitForSeconds(Delay);
+        }
+
+        var startTime = Time.time;
+        while (Time.time - startTime < Duration)
+        {
+            foreach (var target in Targets)
+            {
+                if (!target.gameObject.activeSelf)
+                {
+                    continue;
+                }
+
                 var bullet = _BulletPool.Get();
                 bullet.SetTarget(target.Executor);
                 bullet.AttackSucceededEvent.AddOnce(BulletAttackSucceeded);
             }
 
-            yield return TimeTunnel.WaitForSeconds(TutuInterval / 1000);
+            yield return TimeTunnel.WaitForSeconds(Interval);
         }
+
+        Executed?.Invoke();
     }
 
     private void BulletAttackSucceeded(TutuBullet bullet)

@@ -202,6 +202,10 @@ PrefabInstance:
       value: TutuExecutor (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3303310025965289329, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
+      propertyPath: Delay
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303310025965289329, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
       propertyPath: Bullet
       value: 
       objectReference: {fileID: 5356160384628151418, guid: 36b941117db58af4c96615f0e168f345, type: 3}
@@ -608,6 +612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutuExecutor (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2912225598411422729, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3303310025965289329, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
       propertyPath: Bullet
       value: 
@@ -826,6 +834,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutuExecutor (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2912225598411422729, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3303310025965289329, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
       propertyPath: Bullet
       value: 
@@ -935,6 +947,34 @@ PrefabInstance:
       propertyPath: Targets.Array.data[1]
       value: 
       objectReference: {fileID: 891474234}
+    - target: {fileID: 3303310025965289329, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
+      propertyPath: Executed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303310025965289329, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
+      propertyPath: Executed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303310025965289329, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
+      propertyPath: Executed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2079948400}
+    - target: {fileID: 3303310025965289329, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
+      propertyPath: Executed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303310025965289329, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
+      propertyPath: Executed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Gogogo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303310025965289329, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
+      propertyPath: Executed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TutuExecutor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303310025965289329, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
+      propertyPath: Executed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4946640777709317770, guid: 9df5fa743007bcb45840eace58402cda, type: 3}
       propertyPath: m_RootOrder
       value: 0

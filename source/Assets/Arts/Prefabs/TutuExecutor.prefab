@@ -47,10 +47,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Executor: {fileID: 5588160892287296188}
   Bullet: {fileID: 4398376341914746842, guid: a0b4d2dfc49ec14448adb63e31176fe6, type: 3}
-  TutuInterval: 300
+  Delay: 5
+  Interval: 1
+  Duration: 10
   Targets:
   - {fileID: 3303310025965289329}
   - {fileID: 3303310025965289329}
+  Executed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5236878625659101365
 GameObject:
   m_ObjectHideFlags: 0
