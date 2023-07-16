@@ -49,7 +49,6 @@ public class TutuExecutor : MonoBehaviour
 
     public void Gogogo()
     {
-        Debug.Log($"{name}");
         _Trigger = true;
     }
 
